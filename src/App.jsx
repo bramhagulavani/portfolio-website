@@ -248,7 +248,7 @@ function App() {
               <a className="btn-primary" href={assets.resumeFile} target="_blank" rel="noreferrer">
                 View Resume
               </a>
-              <a className="btn-secondary" href="#projects">
+              <a className="btn-secondary" href="https://project-page-three.vercel.app/">
                 Explore Projects
               </a>
             </div>
