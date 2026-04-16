@@ -339,7 +339,7 @@ function App() {
         <section id="education" className="section-wrap py-20">
           <SectionHeader kicker="Education" title="Academic Journey" />
 
-          <div className="space-y-5">
+          <div className="grid gap-5 md:grid-cols-3">
             {[
               {
                 period: '2024 - 2028',
@@ -412,7 +412,7 @@ function App() {
           <article className="glass-card p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-300">Jun 2025 - Present</p>
             <h3 className="mt-2 text-xl font-semibold text-white">Core Committee Member, Project Area Head</h3>
-            <p className="mt-1 text-sm text-slate-300">ITSA, VIT Pune</p>
+            <p className="mt-1 text-sm text-slate-300">ITSA, GPKP Polytechnic</p>
             <p className="mt-4 text-sm leading-7 text-slate-300">
               Led the project area operations for a technical event, managed participants and execution flow, and coordinated with teams to ensure smooth delivery under deadlines.
             </p>
