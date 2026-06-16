@@ -18,6 +18,7 @@ const aboutHighlights = [
   { label: 'University', value: 'Vishwakarma Institute of Technology, Pune' },
   { label: 'Academic Path', value: 'Direct Second Year (CSE AI/ML)' },
   { label: 'Diploma Score', value: '93.72% (Information Technology)' },
+  { label: 'Current CGPA', value: '9.48' },
   { label: 'Leadership', value: 'Class Representative' },
 ];
 
@@ -296,6 +297,7 @@ function App() {
                     <p><span className="text-accent-300">self.university</span> = "Vishwakarma Institute of Technology, Pune"</p>
                     <p><span className="text-accent-300">self.year</span> = "Direct Second Year (CSE AI/ML)"</p>
                     <p><span className="text-accent-300">self.gpa</span> = "93.72% (Diploma in IT)"</p>
+                    <p><span className="text-accent-300">self.cgpa</span> = "9.48"</p>
                     <p><span className="text-accent-300">self.cr</span> = True</p>
                   </div>
                 </div>
