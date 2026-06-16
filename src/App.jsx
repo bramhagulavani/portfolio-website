@@ -99,6 +99,11 @@ const projects = [
     desc: 'SaaS resume builder with AI-assisted writing, ATS scoring, template customization, and export workflows.',
     stack: ['Next.js', 'OpenRouter', 'Tailwind', 'Vercel'],
   },
+  {
+    name: 'Jobtracker',
+    desc: 'JobTracker is a full-stack job application tracker SaaS built with Next.js, MongoDB Atlas, and Clerk authentication. It is a companion app to ResumeCraft (another project by the same developer). Both apps share the same Clerk account/keys.',
+    stack: ['Next.js','Next.js', 'OpenRouter', 'Tailwind', 'Vercel'],
+  },
 ];
 
 const activities = [
