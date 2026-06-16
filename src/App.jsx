@@ -58,16 +58,16 @@ const skills = [
       { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
       { name: 'Scikit-learn', symbol: 'SK' },
       { name: 'Regression', symbol: 'RG' },
-      { name: 'Classification', symbol: 'CL' },
+      // { name: 'Classification', symbol: 'CL' },
     ],
   },
   {
     title: 'Foundations',
     items: [
       { name: 'DSA', symbol: 'DS' },
-      { name: 'Graph Theory', symbol: 'GT' },
-      { name: 'Discrete Math', symbol: 'DM' },
-      { name: 'OS', symbol: 'OS' },
+      { name: 'Advanced DSA', symbol: 'ADSA' },
+      { name: 'Artificial Intelligence', symbol: 'AI' },
+      { name: 'Operating Systems', symbol: 'OS' },
       { name: 'Computer Networks', symbol: 'CN' },
     ],
   },
@@ -344,19 +344,19 @@ function App() {
           <div className="grid gap-5 md:grid-cols-3">
             {[
               {
-                period: '2024 - 2028',
+                period: '2025 - 2028',
                 title: 'B.Tech in Computer Science & Engineering (AI & ML)',
-                org: 'Vishwakarma Institute of Technology, Pune',
-                desc: 'Currently in second year with focus on AI, algorithms, and software engineering fundamentals.',
+                org: 'Vishwakarma Institute of Technology, Pune (VIT Pune)',
+                desc: 'Currently in Third year with focus on AI, algorithms, and software engineering fundamentals.',
               },
               {
-                period: '2021 - 2024',
+                period: '2022 - 2025',
                 title: 'Diploma in Information Technology',
-                org: 'Government Polytechnic',
+                org: 'Government Polytechnic Kolhapur (GPKP)',
                 desc: 'Built practical foundation in programming, networking, and databases through hands-on work.',
               },
               {
-                period: '2021',
+                period: '2022',
                 title: 'Secondary School Certificate (SSC)',
                 org: 'Maharashtra State Board',
                 desc: 'Completed schooling with a strong academic base for technical specialization.',
