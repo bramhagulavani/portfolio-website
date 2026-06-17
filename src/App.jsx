@@ -112,7 +112,7 @@ const activities = [
   { icon: 'CRK', title: 'Cricket', level: 'Enthusiast', detail: 'Team communication, tactical adaptation, and game awareness.' },
   { icon: 'TT', title: 'Table Tennis', level: 'Intermediate', detail: 'Precision play that sharpens concentration and timing.' },
   { icon: 'CK', title: 'Cooking', level: 'Home Chef', detail: 'Creative experimentation inspired by structured process thinking.' },
-  { icon: 'RD', title: 'Reading', level: 'Avid Learner', detail: 'Technology trends, AI insights, and high-impact biographies.' },
+  { icon: 'TR', title: 'Travelling', level: 'Explorer', detail: 'Exploring new cities, cultures, and landscapes fuels my curiosity beyond the screen.' },
 ];
 
 const galleryCards = [
@@ -120,6 +120,11 @@ const galleryCards = [
     title: 'DIPEX Showcase',
     tag: 'Exhibition',
     image: '/gallery/DIPEX.jpg',
+  },
+  {
+    title: 'VIT Campus',
+    tag: 'College',
+    image: '/gallery/VIT-2.jpg',
   },
   {
     title: 'Operating Systems Presentation',
@@ -130,6 +135,11 @@ const galleryCards = [
     title: 'Springboard Session',
     tag: 'Workshop',
     image: '/gallery/Springboardimage3.jpeg',
+  },
+  {
+    title: 'EDI Presentation',
+    tag: 'Academics',
+    image: '/gallery/EDI_Presentation.jpeg',
   },
 ];
 
