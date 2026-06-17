@@ -462,7 +462,7 @@ function App() {
           </div>
         </section>
 
-        <section id="achievements" className="section-wrap py-20">
+        {/* <section id="achievements" className="section-wrap py-20">
           <SectionHeader kicker="Achievements" title="Milestones & Recognition" />
 
           <div className="grid gap-5 md:grid-cols-2">
@@ -478,7 +478,7 @@ function App() {
               </article>
             ))}
           </div>
-        </section>
+        </section> */}
 
         <section className="section-wrap py-20">
           <SectionHeader kicker="Gallery" title="Highlights" subtitle="A few snapshots from events, presentations, and showcases." />
