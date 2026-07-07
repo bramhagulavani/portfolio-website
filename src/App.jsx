@@ -141,6 +141,11 @@ const galleryCards = [
     tag: 'Academics',
     image: '/gallery/EDI_Presentation.jpeg',
   },
+  {
+    title: 'EDI Presentation',
+    tag: 'Academics',
+    image: '/gallery/DrAmarPanchal1.jpeg',
+  },
 ];
 
 function SectionHeader({ kicker, title, subtitle }) {
