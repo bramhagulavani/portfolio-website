@@ -15,9 +15,16 @@ A modern portfolio web app built with React, Vite, and Tailwind CSS.
 - Animated hero and section transitions
 - Redesigned About section with developer-identity style presentation
 - Skills section with symbols/icons per skill
-- Gallery cards and project showcases
+- Gallery cards and project showcases, including the latest event photo update
 - Contact section and profile links
 - Welcome toast message on page load
+- Downloadable resume from the portfolio header
+
+## Recent Updates This Week
+
+- Updated the resume file at `public/assets/BramhaResume.pdf`
+- Added a new gallery image for the EDI presentation: `public/gallery/DrAmarPanchal1.jpeg`
+- Updated the portfolio gallery in `src/App.jsx` to show the new event photo
 
 ## Local Development
 
