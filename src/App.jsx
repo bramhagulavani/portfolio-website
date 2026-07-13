@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Education', href: '#education' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Certificates', href: '#certificates' },
   { label: 'Experience', href: '#experience' },
   { label: 'Activities', href: '#activities' },
   { label: 'Achievements', href: '#achievements' },
@@ -106,6 +107,164 @@ const projects = [
   },
 ];
 
+const certificates = [
+  // ── Hackathons ──────────────────────────────────────────────────────
+  {
+    id: 'c1',
+    category: 'Hackathon',
+    title: 'Hackspiration 26 Participation',
+    issuer: 'HackWithIndia / VIT Pune',
+    date: '2026',
+    image: '/certificates/Hackspiration Certificate.jpg',
+  },
+  {
+    id: 'c2',
+    category: 'Hackathon',
+    title: 'Apex Hackathon 2025 — Winner',
+    issuer: 'VIT Pune',
+    date: '2025',
+    image: '/certificates/Apex Certificate.jpg',
+  },
+
+  // ── Coursera ────────────────────────────────────────────────────────
+  {
+    id: 'c3',
+    category: 'Coursera',
+    title: 'Introduction to Git and GitHub',
+    issuer: 'Google — Coursera',
+    date: '2024',
+    image: '/certificates/Google Certificate.png',
+  },
+  {
+    id: 'c4',
+    category: 'Coursera',
+    title: 'AWS Fundamentals: Going Cloud-Native',
+    issuer: 'Amazon Web Services — Coursera',
+    date: '2026',
+    image: '/certificates/AWS certificate.png',
+  },
+  // {
+  //   id: 'c5',
+  //   category: 'Coursera',
+  //   title: 'Foundations of Data Science',
+  //   issuer: 'Google — Coursera',
+  //   date: '2025',
+  //   image: '/certificates/coursera-ds.jpg',
+  // },
+
+  // ── Events ──────────────────────────────────────────────────────────
+  // {
+  //   id: 'c6',
+  //   category: 'Event',
+  //   title: 'DIPEX 2025 — Project Exhibition',
+  //   issuer: 'DIPEX, Pune',
+  //   date: 'Apr 2025',
+  //   image: '/certificates/Dipex Certificate.jpg',
+  // },
+  {
+    id: 'c7',
+    category: 'Event',
+    title: 'CyberCell Certificate',
+    issuer: 'VIT Pune',
+    date: '2025',
+    image: '/certificates/CyberCell Certificate.jpg',
+  },
+
+  // ── Exhibition ──────────────────────────────────────────────────────
+  {
+    id: 'c8',
+    category: 'Exhibition',
+    title: 'DIPEX Project Exhibition — Exhibitor',
+    issuer: 'DIPEX, Pune',
+    date: 'Apr 2025',
+    image: '/certificates/Dipex Certificate.jpg',
+  },
+  {
+    id: 'c9',
+    category: 'Exhibition',
+    title: 'Project Representative Certificate',
+    issuer: 'Vishwakarma Institute of Technology',
+    date: '2025',
+    image: '/certificates/project-rep.jpg',
+  },
+];
+
+const CERT_TABS = ['All', 'Hackathon', 'Coursera', 'Event', 'Exhibition'];
+
+// ── Lightbox component ────────────────────────────────────────────────
+function CertLightbox({ cert, onClose }) {
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(6px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-base-900 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition hover:bg-white/20"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+
+        {/* Certificate image */}
+        <div className="flex items-center justify-center bg-black/40 p-2">
+          <img
+            src={cert.image}
+            alt={cert.title}
+            className="max-h-[65vh] w-full object-contain"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'flex';
+            }}
+          />
+          {/* Fallback if image missing */}
+          <div
+            className="hidden h-64 w-full flex-col items-center justify-center gap-3 text-slate-400"
+            style={{ display: 'none' }}
+          >
+            <span className="text-5xl">🏅</span>
+            <p className="text-sm">Image coming soon</p>
+            <code className="text-xs text-accent-300">{cert.image}</code>
+          </div>
+        </div>
+
+        {/* Info strip */}
+        <div className="flex items-start justify-between gap-4 p-5">
+          <div>
+            <span className="chip mb-2 inline-block">{cert.category}</span>
+            <h3 className="text-lg font-bold text-white">{cert.title}</h3>
+            <p className="mt-1 text-sm text-slate-400">{cert.issuer} · {cert.date}</p>
+          </div>
+          <a
+            href={cert.image}
+            download
+            className="btn-primary shrink-0 text-xs"
+            onClick={(e) => e.stopPropagation()}
+          >
+            ↓ Download
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const activities = [
   { icon: 'BAD', title: 'Badminton', level: 'Intermediate', detail: 'Fast reflex play and strategy-focused doubles sessions.' },
   { icon: 'SWM', title: 'Swimming', level: 'Intermediate', detail: 'Focus and endurance training that balances long coding days.' },
@@ -178,6 +337,8 @@ function SkillItem({ skill }) {
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toastOpen, setToastOpen] = useState(true);
+  const [certTab, setCertTab] = useState('All');
+  const [lightboxCert, setLightboxCert] = useState(null);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setToastOpen(false), 4800);
@@ -428,6 +589,99 @@ function App() {
             ))}
           </div>
         </section>
+
+        {/* ── CERTIFICATES & AWARDS ──────────────────────────────────── */}
+        <section id="certificates" className="section-wrap py-20">
+          <SectionHeader
+            kicker="Certificates & Awards"
+            title="Honours & Recognition"
+            subtitle="Certifications earned, hackathons attended, events organised, and exhibitions showcased."
+          />
+
+          {/* Tab filter */}
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
+            {CERT_TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setCertTab(tab)}
+                className="rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest transition"
+                style={{
+                  background: certTab === tab ? 'var(--color-accent-400, #4ade80)' : 'transparent',
+                  color: certTab === tab ? '#060910' : '#94a3b8',
+                  borderColor: certTab === tab ? 'transparent' : 'rgba(255,255,255,0.12)',
+                }}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Certificate cards grid */}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {certificates
+              .filter((c) => certTab === 'All' || c.category === certTab)
+              .map((cert) => (
+                <article
+                  key={cert.id}
+                  onClick={() => setLightboxCert(cert)}
+                  className="glass-card group cursor-pointer overflow-hidden transition hover:-translate-y-1 hover:border-accent-300/50"
+                >
+                  {/* Thumbnail */}
+                  <div className="relative h-44 w-full overflow-hidden bg-black/40">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback placeholder */}
+                    <div
+                      className="absolute inset-0 hidden flex-col items-center justify-center gap-2 bg-gradient-to-br from-slate-800 to-slate-900"
+                      style={{ display: 'none' }}
+                    >
+                      <span className="text-4xl">🏅</span>
+                      <p className="text-center text-[10px] text-slate-400 px-3">{cert.image}</p>
+                    </div>
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition duration-300 group-hover:bg-black/40">
+                      <span
+                        className="rounded-full border border-white/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-white opacity-0 transition duration-300 group-hover:opacity-100"
+                      >
+                        View Certificate
+                      </span>
+                    </div>
+                    {/* Category badge */}
+                    <span
+                      className="absolute left-3 top-3 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest"
+                      style={{ background: 'rgba(74,222,128,0.18)', border: '1px solid rgba(74,222,128,0.35)', color: '#4ade80' }}
+                    >
+                      {cert.category}
+                    </span>
+                  </div>
+
+                  {/* Card body */}
+                  <div className="p-4">
+                    <h3 className="text-sm font-semibold leading-snug text-white">{cert.title}</h3>
+                    <p className="mt-1 text-xs text-slate-400">{cert.issuer}</p>
+                    <p className="mt-0.5 text-xs text-slate-500">{cert.date}</p>
+                  </div>
+                </article>
+              ))}
+          </div>
+
+          {/* Empty state */}
+          {certificates.filter((c) => certTab === 'All' || c.category === certTab).length === 0 && (
+            <p className="mt-10 text-center text-sm text-slate-500">No certificates in this category yet.</p>
+          )}
+        </section>
+
+        {/* Lightbox */}
+        {lightboxCert && (
+          <CertLightbox cert={lightboxCert} onClose={() => setLightboxCert(null)} />
+        )}
 
         <section id="experience" className="section-wrap py-20">
           <SectionHeader kicker="Experience" title="Leadership & Community" />
