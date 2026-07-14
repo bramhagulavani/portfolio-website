@@ -115,7 +115,7 @@ const certificates = [
     title: 'Hackspiration 26 Participation',
     issuer: 'HackWithIndia / VIT Pune',
     date: '2026',
-    image: '/certificates/Hackspiration Certificate.jpg',
+    image: '/certificates/HackspirationCertificate.jpg',
   },
   {
     id: 'c2',
@@ -123,7 +123,7 @@ const certificates = [
     title: 'Apex Hackathon 2025 — Winner',
     issuer: 'VIT Pune',
     date: '2025',
-    image: '/certificates/Apex Certificate.jpg',
+    image: '/certificates/ApexCertificate.jpg',
   },
 
   // ── Coursera ────────────────────────────────────────────────────────
@@ -133,7 +133,7 @@ const certificates = [
     title: 'Introduction to Git and GitHub',
     issuer: 'Google — Coursera',
     date: '2024',
-    image: '/certificates/Google Certificate.png',
+    image: '/certificates/GoogleCertificate.png',
   },
   {
     id: 'c4',
@@ -141,7 +141,7 @@ const certificates = [
     title: 'AWS Fundamentals: Going Cloud-Native',
     issuer: 'Amazon Web Services — Coursera',
     date: '2026',
-    image: '/certificates/AWS certificate.png',
+    image: '/certificates/AWScertificate.png',
   },
   // {
   //   id: 'c5',
@@ -167,7 +167,7 @@ const certificates = [
     title: 'CyberCell Certificate',
     issuer: 'VIT Pune',
     date: '2025',
-    image: '/certificates/CyberCell Certificate.jpg',
+    image: '/certificates/CyberCellCertificate.jpg',
   },
 
   // ── Exhibition ──────────────────────────────────────────────────────
@@ -177,7 +177,7 @@ const certificates = [
     title: 'DIPEX Project Exhibition — Exhibitor',
     issuer: 'DIPEX, Pune',
     date: 'Apr 2025',
-    image: '/certificates/Dipex Certificate.jpg',
+    image: '/certificates/DipexCertificate.jpg',
   },
   {
     id: 'c9',
