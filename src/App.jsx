@@ -444,7 +444,7 @@ function App() {
           <div className="reveal-up [animation-delay:120ms]">
             <div className="glass-card mx-auto max-w-sm p-6">
               <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-full border-4 border-accent-400/60 shadow-halo animate-floaty">
-                <img src={assets.profileImage} alt="Bramha profile" className="h-full w-full object-cover object-center scale-[0.84]" />
+                <img src={assets.profileImage} alt="Bramha profile" className="h-full w-full rounded-full object-cover object-[50%_20%] scale-[1.08]" />
               </div>
               <div className="mt-6 rounded-xl border border-black/10 bg-white/80 p-4">
                 <p className="text-sm font-semibold text-slate-900">B.Tech CSE (AI and ML), VIT Pune</p>
