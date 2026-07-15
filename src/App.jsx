@@ -248,8 +248,8 @@ function CertLightbox({ cert, onClose }) {
         <div className="flex items-start justify-between gap-4 p-5">
           <div>
             <span className="chip mb-2 inline-block">{cert.category}</span>
-            <h3 className="text-lg font-bold text-white">{cert.title}</h3>
-            <p className="mt-1 text-sm text-slate-400">{cert.issuer} · {cert.date}</p>
+            <h3 className="text-lg font-bold text-slate-900">{cert.title}</h3>
+            <p className="mt-1 text-sm text-slate-600">{cert.issuer} · {cert.date}</p>
           </div>
           <a
             href={cert.image}
@@ -312,7 +312,7 @@ function SectionHeader({ kicker, title, subtitle }) {
     <div className="mb-10 text-center sm:mb-14">
       <span className="section-kicker">{kicker}</span>
       <h2 className="section-title">{title}</h2>
-      {subtitle ? <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-300 sm:text-base">{subtitle}</p> : null}
+      {subtitle ? <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-600 sm:text-base">{subtitle}</p> : null}
     </div>
   );
 }
@@ -321,7 +321,7 @@ function SkillItem({ skill }) {
   const hasIcon = Boolean(skill.icon);
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-base-900/70 px-3 py-1.5 text-xs font-medium text-slate-200 transition hover:border-accent-300/60 hover:text-accent-300">
+    <span className="inline-flex items-center gap-2 rounded-lg border border-black/10 bg-white/75 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-accent-300/60 hover:text-accent-700">
       {hasIcon ? (
         <img src={skill.icon} alt={skill.name} className="h-4 w-4 object-contain" loading="lazy" />
       ) : (
@@ -354,13 +354,13 @@ function App() {
           <div className="flex items-start gap-3 p-4">
             <div className="mt-0.5 rounded-lg bg-accent-500/20 px-2 py-1 text-xs font-bold text-accent-300">HI</div>
             <div className="flex-1">
-              <p className="text-sm font-semibold text-white">Welcome to my profile</p>
-              <p className="mt-1 text-xs text-slate-300">Explore projects, skills, and the journey behind my work.</p>
+              <p className="text-sm font-semibold text-slate-900">Welcome to my profile</p>
+              <p className="mt-1 text-xs text-slate-600">Explore projects, skills, and the journey behind my work.</p>
             </div>
             <button
               type="button"
               onClick={() => setToastOpen(false)}
-              className="rounded-md border border-white/15 px-2 py-1 text-xs text-slate-300 transition hover:border-accent-300/60 hover:text-white"
+              className="rounded-md border border-black/10 px-2 py-1 text-xs text-slate-600 transition hover:border-accent-300/60 hover:text-slate-900"
               aria-label="Close welcome message"
             >
               Close
@@ -423,7 +423,7 @@ function App() {
             <h1 className="font-display text-4xl font-bold leading-tight text-gradient sm:text-5xl lg:text-6xl">
               Bramha Vinayak Gulavani
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
               Building intelligent, practical systems through clean engineering and data-driven thinking. I enjoy solving real-world problems with modern web and AI tooling.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -444,11 +444,11 @@ function App() {
           <div className="reveal-up [animation-delay:120ms]">
             <div className="glass-card mx-auto max-w-sm p-6">
               <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-full border-4 border-accent-400/60 shadow-halo animate-floaty">
-                <img src={assets.profileImage} alt="Bramha profile" className="h-full w-full object-cover object-top" />
+                <img src={assets.profileImage} alt="Bramha profile" className="h-full w-full object-cover object-center scale-[0.84]" />
               </div>
-              <div className="mt-6 rounded-xl border border-white/10 bg-base-900/70 p-4">
-                <p className="text-sm font-semibold text-white">B.Tech CSE (AI and ML), VIT Pune</p>
-                <p className="mt-2 text-xs text-slate-300">Focused on scalable AI-integrated products, strong fundamentals, and modern developer workflows.</p>
+              <div className="mt-6 rounded-xl border border-black/10 bg-white/80 p-4">
+                <p className="text-sm font-semibold text-slate-900">B.Tech CSE (AI and ML), VIT Pune</p>
+                <p className="mt-2 text-xs text-slate-600">Focused on scalable AI-integrated products, strong fundamentals, and modern developer workflows.</p>
               </div>
             </div>
           </div>
@@ -470,9 +470,9 @@ function App() {
                 </span>
               </div>
               <div className="space-y-4 p-5 sm:p-7">
-                <div className="rounded-xl border border-white/10 bg-base-900 p-4 sm:p-5">
-                  <p className="font-display text-sm text-slate-200">class BramhaGulavani</p>
-                  <div className="mt-3 space-y-2 text-xs leading-6 text-slate-300 sm:text-sm">
+                <div className="rounded-xl border border-black/10 bg-white p-4 sm:p-5">
+                  <p className="font-display text-sm text-slate-900">class BramhaGulavani</p>
+                  <div className="mt-3 space-y-2 text-xs leading-6 text-slate-600 sm:text-sm">
                     <p><span className="text-accent-300">self.name</span> = "Bramha Vinayak Gulavani"</p>
                     <p><span className="text-accent-300">self.role</span> = "AI/ML Undergraduate | MERN-Stack Developer"</p>
                     <p><span className="text-accent-300">self.university</span> = "Vishwakarma Institute of Technology, Pune"</p>
@@ -484,8 +484,8 @@ function App() {
                 </div>
 
                 <div className="rounded-xl border border-accent-300/25 bg-accent-500/10 p-4 sm:p-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-200">Terminal Output</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-100 sm:text-base">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-700">Terminal Output</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-700 sm:text-base">
                     "Build systems that solve real-world problems through intelligent technology."
                   </p>
                 </div>
@@ -494,10 +494,10 @@ function App() {
 
             <div className="space-y-5">
               <article className="glass-card p-5 sm:p-6">
-                <h3 className="font-display text-lg text-white">Current Focus</h3>
+                <h3 className="font-display text-lg text-slate-900">Current Focus</h3>
                 <div className="mt-4 grid gap-2">
                   {currentFocus.map((item) => (
-                    <div key={item} className="rounded-lg border border-white/10 bg-base-900/70 px-3 py-2 text-sm text-slate-200">
+                    <div key={item} className="rounded-lg border border-black/10 bg-white/80 px-3 py-2 text-sm text-slate-700">
                       {item}
                     </div>
                   ))}
@@ -505,12 +505,12 @@ function App() {
               </article>
 
               <article className="glass-card p-5 sm:p-6">
-                <h3 className="font-display text-lg text-white">Identity Markers</h3>
+                <h3 className="font-display text-lg text-slate-900">Identity Markers</h3>
                 <div className="mt-4 space-y-3">
                   {aboutHighlights.map((item) => (
-                    <div key={item.label} className="flex flex-col gap-1 rounded-lg border border-white/10 bg-base-900/70 px-3 py-2 sm:flex-row sm:items-center sm:justify-between">
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">{item.label}</span>
-                      <span className="text-sm text-slate-200">{item.value}</span>
+                    <div key={item.label} className="flex flex-col gap-1 rounded-lg border border-black/10 bg-white/80 px-3 py-2 sm:flex-row sm:items-center sm:justify-between">
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-700">{item.label}</span>
+                      <span className="text-sm text-slate-700">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -545,9 +545,9 @@ function App() {
             ].map((item) => (
               <article key={item.title} className="glass-card p-5 sm:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-300">{item.period}</p>
-                <h3 className="mt-2 text-lg font-semibold text-white sm:text-xl">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-300">{item.org}</p>
-                <p className="mt-3 text-sm leading-7 text-slate-400">{item.desc}</p>
+                <h3 className="mt-2 text-lg font-semibold text-slate-900 sm:text-xl">{item.title}</h3>
+                <p className="mt-1 text-sm text-slate-600">{item.org}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-500">{item.desc}</p>
               </article>
             ))}
           </div>
@@ -559,7 +559,7 @@ function App() {
           <div className="grid gap-5 md:grid-cols-2">
             {skills.map((block) => (
               <article key={block.title} className="glass-card p-6">
-                <h3 className="font-display text-lg text-white">{block.title}</h3>
+                <h3 className="font-display text-lg text-slate-900">{block.title}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {block.items.map((skill) => (
                     <SkillItem key={skill.name} skill={skill} />
@@ -576,8 +576,8 @@ function App() {
           <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project) => (
               <article key={project.name} className="glass-card p-6 transition hover:-translate-y-1 hover:border-accent-300/50">
-                <h3 className="font-display text-xl text-white">{project.name}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{project.desc}</p>
+                <h3 className="font-display text-xl text-slate-900">{project.name}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{project.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span key={item} className="rounded-full border border-accent-400/25 bg-accent-500/10 px-3 py-1 text-xs font-semibold text-accent-300">
@@ -664,8 +664,8 @@ function App() {
 
                   {/* Card body */}
                   <div className="p-4">
-                    <h3 className="text-sm font-semibold leading-snug text-white">{cert.title}</h3>
-                    <p className="mt-1 text-xs text-slate-400">{cert.issuer}</p>
+                    <h3 className="text-sm font-semibold leading-snug text-slate-900">{cert.title}</h3>
+                    <p className="mt-1 text-xs text-slate-600">{cert.issuer}</p>
                     <p className="mt-0.5 text-xs text-slate-500">{cert.date}</p>
                   </div>
                 </article>
@@ -687,18 +687,18 @@ function App() {
           <SectionHeader kicker="Experience" title="Leadership & Community" />
           <article className="glass-card p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-300">Jun 2025 - Present</p>
-            <h3 className="mt-2 text-xl font-semibold text-white">Sponsorship & PR Lead, HackWithIndia Core Team</h3>
-            <p className="mt-1 text-sm text-slate-300">HWI, VIT Pune</p>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
+            <h3 className="mt-2 text-xl font-semibold text-slate-900">Sponsorship & PR Lead, HackWithIndia Core Team</h3>
+            <p className="mt-1 text-sm text-slate-600">HWI, VIT Pune</p>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
               Building strategic partnerships, managing outreach, and driving community engagement.
             </p>
           </article>
          <br></br>
           <article className="glass-card p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-300">Jan 2023 - Jun 2025</p>
-            <h3 className="mt-2 text-xl font-semibold text-white">Core Committee Member, Project Area Head</h3>
-            <p className="mt-1 text-sm text-slate-300">ITSA, GPKP Polytechnic</p>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
+            <h3 className="mt-2 text-xl font-semibold text-slate-900">Core Committee Member, Project Area Head</h3>
+            <p className="mt-1 text-sm text-slate-600">ITSA, GPKP Polytechnic</p>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
               Led the project area operations for a technical event, managed participants and execution flow, and coordinated with teams to ensure smooth delivery under deadlines.
             </p>
           </article>
@@ -711,11 +711,11 @@ function App() {
             {activities.map((item) => (
               <article key={item.title} className="glass-card p-5 transition hover:-translate-y-1 hover:border-accent-300/50">
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-accent-300/30 bg-accent-500/10 text-xs font-bold tracking-wide text-accent-300">{item.icon}</div>
-                <h3 className="mt-3 text-lg font-semibold text-white">{item.title}</h3>
-                <span className="mt-2 inline-flex rounded-full border border-white/15 bg-base-900 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-accent-300">
+                <h3 className="mt-3 text-lg font-semibold text-slate-900">{item.title}</h3>
+                <span className="mt-2 inline-flex rounded-full border border-black/10 bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-accent-700">
                   {item.level}
                 </span>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{item.detail}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.detail}</p>
               </article>
             ))}
           </div>
@@ -747,7 +747,7 @@ function App() {
                 <img src={card.image} alt={card.title} className="h-48 w-full object-cover" />
                 <div className="p-4">
                   <span className="chip">{card.tag}</span>
-                  <h3 className="mt-3 text-base font-semibold text-white">{card.title}</h3>
+                  <h3 className="mt-3 text-base font-semibold text-slate-900">{card.title}</h3>
                 </div>
               </article>
             ))}
@@ -763,16 +763,16 @@ function App() {
 
           <div className="grid gap-6 lg:grid-cols-[1fr_1.3fr]">
             <aside className="glass-card p-6">
-              <h3 className="font-display text-xl text-white">Contact Info</h3>
-              <div className="mt-5 space-y-4 text-sm text-slate-300">
+              <h3 className="font-display text-xl text-slate-900">Contact Info</h3>
+              <div className="mt-5 space-y-4 text-sm text-slate-600">
                 <p>
-                  <span className="font-semibold text-white">Email:</span> bramhagulavani@gmail.com
+                  <span className="font-semibold text-slate-900">Email:</span> bramhagulavani@gmail.com
                 </p>
                 <p>
-                  <span className="font-semibold text-white">Location:</span> Pune, Maharashtra, India
+                  <span className="font-semibold text-slate-900">Location:</span> Pune, Maharashtra, India
                 </p>
                 <p>
-                  <span className="font-semibold text-white">LinkedIn:</span>{' '}
+                  <span className="font-semibold text-slate-900">LinkedIn:</span>{' '}
                   <a
                     href="https://www.linkedin.com/in/bramha-vinayak-gulavani-31302a30b"
                     className="text-accent-300 hover:text-accent-200"
@@ -783,7 +783,7 @@ function App() {
                   </a>
                 </p>
                 <p>
-                  <span className="font-semibold text-white">GitHub:</span>{' '}
+                  <span className="font-semibold text-slate-900">GitHub:</span>{' '}
                   <a href="https://github.com/bramhagulavani" className="text-accent-300 hover:text-accent-200" target="_blank" rel="noreferrer">
                     bramhagulavani
                   </a>
@@ -792,13 +792,13 @@ function App() {
             </aside>
 
             <form className="glass-card p-6 sm:p-8" onSubmit={(e) => e.preventDefault()}>
-              <h3 className="font-display text-xl text-white">Send a message</h3>
+              <h3 className="font-display text-xl text-slate-900">Send a message</h3>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                <input className="rounded-xl border border-white/15 bg-base-900 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-accent-300/70 focus:outline-none" placeholder="Your Name" />
-                <input className="rounded-xl border border-white/15 bg-base-900 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-accent-300/70 focus:outline-none" placeholder="Subject" />
+                <input className="rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-300/70 focus:outline-none" placeholder="Your Name" />
+                <input className="rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-300/70 focus:outline-none" placeholder="Subject" />
               </div>
-              <input className="mt-4 w-full rounded-xl border border-white/15 bg-base-900 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-accent-300/70 focus:outline-none" placeholder="Email" />
-              <textarea className="mt-4 h-36 w-full rounded-xl border border-white/15 bg-base-900 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-accent-300/70 focus:outline-none" placeholder="Tell me about your idea, role, or collaboration." />
+              <input className="mt-4 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-300/70 focus:outline-none" placeholder="Email" />
+              <textarea className="mt-4 h-36 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-300/70 focus:outline-none" placeholder="Tell me about your idea, role, or collaboration." />
               <button type="submit" className="btn-primary mt-4 w-full">
                 Send Message
               </button>
@@ -808,7 +808,7 @@ function App() {
       </main>
 
       <footer className="border-t border-white/10 py-8">
-        <div className="section-wrap text-center text-sm text-slate-400">
+        <div className="section-wrap text-center text-sm text-slate-600">
           <p>Copyright {year} Bramha Vinayak Gulavani. All rights reserved.</p>
           <p className="mt-1">Designed in React + Tailwind with a performance-first visual system.</p>
         </div>

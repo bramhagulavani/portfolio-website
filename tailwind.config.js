@@ -9,26 +9,26 @@ export default {
       },
       colors: {
         base: {
-          950: '#060a0f',
-          900: '#0c1118',
-          850: '#111827',
-          800: '#1b2433',
-          700: '#2a3648',
+          950: '#ffffff',
+          900: '#f8fafc',
+          850: '#f1f5f9',
+          800: '#e2e8f0',
+          700: '#cbd5e1',
         },
         accent: {
           300: '#6fffd2',
           400: '#33f0b1',
-          500: '#18d99d',
-          600: '#10b981',
-          700: '#079568',
+          500: '#0ea876',
+          600: '#0c8f65',
+          700: '#0a7454',
         },
       },
       boxShadow: {
-        halo: '0 0 0 1px rgba(24, 217, 157, 0.35), 0 20px 60px rgba(0, 0, 0, 0.35)',
-        card: '0 22px 50px rgba(6, 10, 15, 0.45)',
+        halo: '0 0 0 1px rgba(14, 168, 118, 0.35), 0 20px 60px rgba(15, 23, 42, 0.12)',
+        card: '0 12px 30px rgba(15, 23, 42, 0.08)',
       },
       backgroundImage: {
-        mesh: 'radial-gradient(circle at 12% 22%, rgba(24,217,157,0.22), transparent 45%), radial-gradient(circle at 85% 10%, rgba(106,255,220,0.18), transparent 42%), radial-gradient(circle at 78% 75%, rgba(39,122,255,0.18), transparent 36%)',
+        mesh: 'radial-gradient(circle at 12% 22%, rgba(24,217,157,0.12), transparent 45%), radial-gradient(circle at 85% 10%, rgba(16,150,110,0.10), transparent 42%), radial-gradient(circle at 78% 75%, rgba(39,122,255,0.08), transparent 36%)',
       },
       keyframes: {
         floaty: {
