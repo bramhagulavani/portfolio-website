@@ -687,10 +687,10 @@ function App() {
           <SectionHeader kicker="Experience" title="Leadership & Community" />
           <article className="glass-card p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-300">Jun 2025 - Present</p>
-            <h3 className="mt-2 text-xl font-semibold text-slate-900">Sponsorship & PR Lead, HackWithIndia Core Team</h3>
+            <h3 className="mt-2 text-xl font-semibold text-slate-900">Secretary, HackWithIndia Core Team</h3>
             <p className="mt-1 text-sm text-slate-600">HWI, VIT Pune</p>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Building strategic partnerships, managing outreach, and driving community engagement.
+              A professional responsible for managing correspondence, organizing schedules, keeping records, and handling administrative tasks.
             </p>
           </article>
          <br></br>
