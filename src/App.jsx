@@ -301,8 +301,8 @@ const galleryCards = [
     image: '/gallery/EDI_Presentation.jpeg',
   },
   {
-    title: 'EDI Presentation',
-    tag: 'Academics',
+    title: 'Dr. Amar Panchal Workshop',
+    tag: 'Workshop',
     image: '/gallery/DrAmarPanchal1.jpeg',
   },
 ];
