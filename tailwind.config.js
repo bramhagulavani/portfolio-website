@@ -8,27 +8,34 @@ export default {
         body: ['Outfit', 'sans-serif'],
       },
       colors: {
-        base: {
-          950: '#ffffff',
-          900: '#f8fafc',
-          850: '#f1f5f9',
-          800: '#e2e8f0',
-          700: '#cbd5e1',
+        brand: {
+          bg: 'var(--color-bg)',
+          surface: 'var(--color-surface)',
+          'surface-subtle': 'var(--color-surface-subtle)',
+          border: 'var(--color-border)',
+          text: 'var(--color-text)',
+          muted: 'var(--color-muted)',
+          accent: 'var(--color-accent)',
         },
-        accent: {
-          300: '#6fffd2',
-          400: '#33f0b1',
-          500: '#0ea876',
-          600: '#0c8f65',
-          700: '#0a7454',
+        emerald: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
         },
       },
       boxShadow: {
-        halo: '0 0 0 1px rgba(14, 168, 118, 0.35), 0 20px 60px rgba(15, 23, 42, 0.12)',
-        card: '0 12px 30px rgba(15, 23, 42, 0.08)',
-      },
-      backgroundImage: {
-        mesh: 'radial-gradient(circle at 12% 22%, rgba(24,217,157,0.12), transparent 45%), radial-gradient(circle at 85% 10%, rgba(16,150,110,0.10), transparent 42%), radial-gradient(circle at 78% 75%, rgba(39,122,255,0.08), transparent 36%)',
+        card: '0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03)',
+        'card-hover': '0 20px 30px -10px rgba(16, 185, 129, 0.15), 0 8px 15px -6px rgba(15, 23, 42, 0.06)',
+        'emerald-glow': '0 0 25px -5px rgba(16, 185, 129, 0.35)',
+        'emerald-ring': '0 0 0 4px rgba(16, 185, 129, 0.15)',
+        nav: '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
       },
       keyframes: {
         floaty: {
@@ -36,8 +43,12 @@ export default {
           '50%': { transform: 'translateY(-8px)' },
         },
         reveal: {
-          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
         toastIn: {
           '0%': { opacity: '0', transform: 'translateY(-24px) scale(0.98)' },
@@ -50,7 +61,8 @@ export default {
       },
       animation: {
         floaty: 'floaty 6s ease-in-out infinite',
-        reveal: 'reveal 600ms ease-out both',
+        reveal: 'reveal 600ms cubic-bezier(0.16, 1, 0.3, 1) both',
+        marquee: 'marquee 30s linear infinite',
         toastIn: 'toastIn 420ms cubic-bezier(0.16, 1, 0.3, 1) both',
         progress: 'progress 4.8s linear forwards',
       },
