@@ -259,7 +259,7 @@ const certificates = [
   {
     id: 'c2',
     category: 'Hackathon',
-    title: 'Apex Hackathon 2025 — Winner',
+    title: 'Apex Hackathon 2025',
     issuer: 'VIT Pune',
     date: '2025',
     image: '/certificates/ApexCertificate.jpg',
@@ -286,7 +286,7 @@ const certificates = [
     title: 'CyberCell Certificate',
     issuer: 'VIT Pune',
     date: '2025',
-    image: '/certificates/CyberCellCertificate.jpg',
+    image: '/certificates/CyberCellCertificate.png',
   },
   {
     id: 'c8',
@@ -294,19 +294,59 @@ const certificates = [
     title: 'DIPEX Project Exhibition — Exhibitor',
     issuer: 'DIPEX, Pune',
     date: 'Apr 2025',
-    image: '/certificates/DipexCertificate.jpg',
+    image: '/certificates/DipexCertificate.jpeg',
   },
   {
     id: 'c9',
     category: 'Exhibition',
     title: 'Project Representative Certificate',
-    issuer: 'Vishwakarma Institute of Technology',
+    issuer: 'Ashokrao Mane Polytechnic, Vathar, Kolhapur',
     date: '2025',
-    image: '/certificates/project-rep.jpg',
+    image: '/certificates/Project_representation_ashokrao_mane.jpg',
+  },
+  {
+    id: 'c10',
+    category: 'Event',
+    title: 'COSA Incepto Participating Certificate',
+    issuer: 'Government Polytechnic, Karad',
+    date: '2025',
+    image: '/certificates/Incepto_Karad.jpg',
+  },
+  {
+    id: 'c11',
+    category: 'Event',
+    title: 'ITSA Award for Best Lead',
+    issuer: 'Government Polytechnic, Kolhapur',
+    date: '2025',
+    image: '/certificates/Mr_Walking_Wikipedia.jpg',
+  },
+  {
+    id: 'c12',
+    category: 'Event',
+    title: 'LINUXDIARY 5.0',
+    issuer: 'Walchand College of Engineering, Sangli',
+    date: '2025',
+    image: '/certificates/Walchand_Linux_Certificate.jpg',
+  },
+  {
+    id: 'c13',
+    category: 'Coursera',
+    title: 'AI Fundamentals',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/AI_Fundamentals.png',
+  },
+  {
+    id: 'c14',
+    category: 'Badges',
+    title: 'AI Fundamentals Badge',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/Badges/google-ai-fundamentals.png',
   },
 ];
 
-const CERT_TABS = ['All', 'Hackathon', 'Coursera', 'Event', 'Exhibition'];
+const CERT_TABS = ['All', 'Hackathon', 'Coursera', 'Event', 'Exhibition', 'Badges'];
 
 const activities = [
   { Icon: IconBadminton, title: 'Badminton', level: 'Intermediate', detail: 'Fast reflex play and strategy-focused doubles sessions.' },
