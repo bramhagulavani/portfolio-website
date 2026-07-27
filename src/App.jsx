@@ -346,14 +346,6 @@ const certificates = [
   },
   {
     id: 'c15',
-    category: 'Badges',
-    title: 'AI For Brainstorming and Planning',
-    issuer: 'Google',
-    date: '2025',
-    image: '/certificates/Badges/google-ai-for-brainstorming-and-planning.png',
-  },
-  {
-    id: 'c16',
     category: 'Coursera',
     title: 'AI For Brainstorming and Planning',
     issuer: 'Google',
