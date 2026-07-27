@@ -350,7 +350,7 @@ const certificates = [
     title: 'AI For Brainstorming and Planning',
     issuer: 'Google',
     date: '2025',
-    image: '/certificates/Badges/AI_FOR_BRAINSTORMING.png',
+    image: '/certificates/AI_FOR_BRAINSTORMING.png',
   },
 ];
 
