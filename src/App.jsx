@@ -344,6 +344,14 @@ const certificates = [
     date: '2025',
     image: '/certificates/Badges/google-ai-fundamentals.png',
   },
+  {
+    id: 'c15',
+    category: 'Badges',
+    title: 'AI For Brainstorming and Planning',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/Badges/google-ai-for-brainstorming-and-planning.png',
+  },
 ];
 
 const CERT_TABS = ['All', 'Hackathon', 'Coursera', 'Event', 'Exhibition', 'Badges'];
