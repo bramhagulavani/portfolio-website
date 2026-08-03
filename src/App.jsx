@@ -106,6 +106,33 @@ function IconGithub({ className = "w-5 h-5" }) {
   );
 }
 
+function IconInstagram({ className = "w-7 h-7" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <defs>
+        <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#fdf497" />
+          <stop offset="5%" stopColor="#fdf497" />
+          <stop offset="45%" stopColor="#fd5949" />
+          <stop offset="60%" stopColor="#d6249f" />
+          <stop offset="100%" stopColor="#285AEB" />
+        </linearGradient>
+      </defs>
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" fill="url(#instagram-gradient)" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#ffffff" strokeWidth="1.5" fill="none" />
+      <circle cx="17.5" cy="6.5" r="1" fill="#ffffff" />
+    </svg>
+  );
+}
+
+function IconLeetcode({ className = "w-5 h-5" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16.102 17.93a4.5 4.5 0 0 0 2.454-1.396l3.702-3.702a.75.75 0 0 0-1.06-1.06l-3.703 3.702a3 3 0 0 1-4.243 0l-5.656-5.657a3 3 0 0 1 0-4.242L11.3 1.87a3 3 0 0 1 4.242 0l2.829 2.829a.75.75 0 0 0 1.06-1.06L16.602.81a4.5 4.5 0 0 0-6.364 0l-3.702 3.702a4.5 4.5 0 0 0 0 6.364l5.657 5.657a4.5 4.5 0 0 0 3.909 1.397zM2.25 12a.75.75 0 0 1 .75-.75h8a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75z" />
+    </svg>
+  );
+}
+
 function IconDownload({ className = "w-4 h-4" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -533,6 +560,7 @@ function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toastOpen, setToastOpen] = useState(true);
   const [certTab, setCertTab] = useState('All');
+  const [showAll, setShowAll] = useState(false);
   const [lightboxCert, setLightboxCert] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -565,8 +593,115 @@ function App() {
 
   const year = useMemo(() => new Date().getFullYear(), []);
 
+  const filteredCertificates = useMemo(() => {
+    return certificates.filter((c) => certTab === 'All' || c.category === certTab);
+  }, [certTab]);
+
+  const visibleCertificates = showAll ? filteredCertificates : filteredCertificates.slice(0, 6);
+
   return (
     <div className="shell bg-dot-grid">
+      {/* Dynamic Keyframes and Hero Button Animations */}
+      <style>{`
+        @keyframes metallicShimmer {
+          0%   { background-position: 0% center; }
+          100% { background-position: 300% center; }
+        }
+
+        .hero-btn-primary {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.75rem;
+          background-color: #10b981;
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 0.875rem;
+          letter-spacing: 0.01em;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+        }
+
+        .hero-btn-primary:hover {
+          transform: scale(1.03);
+          box-shadow: 0 6px 30px rgba(16, 185, 129, 0.7);
+        }
+
+        .hero-btn-primary::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.4) 50%,
+            transparent 70%
+          );
+          transition: all 0.6s ease;
+        }
+
+        .hero-btn-primary:hover::before {
+          left: 100%;
+        }
+
+        @keyframes fakeCursorClick {
+          0%   { transform: translate(-60px, 20px) scale(0.8); opacity: 0; }
+          20%  { opacity: 1; }
+          60%  { transform: translate(0px, 0px) scale(1); opacity: 1; }
+          70%  { transform: translate(0px, 0px) scale(0.55); opacity: 1; }
+          80%  { transform: translate(0px, 0px) scale(1.05); opacity: 0.9; }
+          90%  { transform: translate(10px, -10px) scale(0.8); opacity: 0.3; }
+          100% { transform: translate(20px, -20px) scale(0.6); opacity: 0; }
+        }
+
+        .fake-cursor-dot {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 28px;
+          height: 32px;
+          margin-top: -16px;
+          margin-left: -14px;
+          pointer-events: none;
+          z-index: 10;
+          animation: fakeCursorClick 4.5s ease-in-out 1 forwards;
+          animation-delay: 1s;
+        }
+
+        .hero-btn-secondary {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.75rem;
+          border: 1.5px solid #cbd5e1;
+          background-color: transparent;
+          color: #475569;
+          font-weight: 600;
+          font-size: 0.875rem;
+          letter-spacing: 0.01em;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+        }
+
+        .hero-btn-secondary:hover {
+          background-color: rgba(16, 185, 129, 0.1);
+          border-color: #10b981;
+          color: #10b981;
+          transform: scale(1.02);
+        }
+      `}</style>
+
       {/* Welcome Toast Notification */}
       {toastOpen ? (
         <div className="fixed inset-x-0 top-5 z-50 mx-auto w-[min(92vw,420px)] animate-toastIn overflow-hidden rounded-2xl border border-emerald-500/30 bg-white/95 shadow-xl backdrop-blur-md">
@@ -667,19 +802,31 @@ function App() {
               AI & ML Focused Engineer
             </span>
 
-            <h1 className="font-display text-4xl font-bold leading-[1.15] text-slate-900 sm:text-5xl lg:text-6xl tracking-tight mt-2">
-              Hi, I'm <span className="text-gradient-green">Bramha Vinayak</span> Gulavani
+            <h1 className="font-display text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl tracking-tight mt-2">
+              <span
+                style={{
+                  background: 'linear-gradient(120deg, #1a1a1a 0%, #8B6914 15%, #C9A84C 30%, #F0D080 45%, #ffffff 50%, #F0D080 55%, #C9A84C 70%, #8B6914 85%, #1a1a1a 100%)',
+                  backgroundSize: '300% auto',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  animation: 'metallicShimmer 4s linear 1 forwards',
+                }}
+              >
+                Hi, I'm Bramha Vinayak Gulavani
+              </span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              Building intelligent, practical systems through clean engineering and data-driven thinking. I enjoy solving real-world problems with modern web and AI tooling.
-            </p>
-
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
-              <a className="btn-primary" href={assets.resumeFile} target="_blank" rel="noreferrer">
+              <a className="hero-btn-primary" href={assets.resumeFile} target="_blank" rel="noreferrer">
                 View Resume <IconExternalLink />
+                <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="fake-cursor-dot">
+                  <path d="M4 2L4 26L10 20L14 30L17 29L13 19L22 19L4 2Z"
+                    fill="white" stroke="black" strokeWidth="2"
+                    strokeLinejoin="round" strokeLinecap="round"/>
+                </svg>
               </a>
-              <a className="btn-secondary" href="https://project-page-three.vercel.app/" target="_blank" rel="noreferrer">
+              <a className="hero-btn-secondary" href="https://project-page-three.vercel.app/" target="_blank" rel="noreferrer">
                 Explore Projects
               </a>
             </div>
@@ -706,14 +853,57 @@ function App() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl border border-slate-200/80 bg-slate-50/80 p-4 text-left shadow-sm">
-                <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                  <p className="text-sm font-bold text-slate-900">B.Tech CSE (AI and ML)</p>
-                </div>
-                <p className="mt-1 text-xs font-semibold text-emerald-700">Vishwakarma Institute of Technology, Pune</p>
-                <p className="mt-2 text-xs text-slate-600 leading-relaxed">Focused on scalable AI-integrated products, strong CS fundamentals, and modern developer workflows.</p>
+              {/* Centered Row of 5 Social Icons in original brand colors */}
+              <div className="mt-5 flex items-center justify-center gap-4">
+                <a
+                  href="https://www.linkedin.com/in/bramha-vinayak-gulavani-31302a30b"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="transition-transform duration-200 hover:scale-[1.2] inline-flex items-center justify-center"
+                >
+                  <IconLinkedin className="w-7 h-7 text-[#0A66C2]" />
+                </a>
+                <a
+                  href="https://github.com/bramhagulavani"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="transition-transform duration-200 hover:scale-[1.2] inline-flex items-center justify-center"
+                >
+                  <IconGithub className="w-7 h-7 text-[#333333]" />
+                </a>
+                <a
+                  href="mailto:bramhagulavani@gmail.com"
+                  aria-label="Gmail"
+                  className="transition-transform duration-200 hover:scale-[1.2] inline-flex items-center justify-center"
+                >
+                  <IconMail className="w-7 h-7 text-[#EA4335]" />
+                </a>
+                <a
+                  href="https://www.instagram.com/bramhagulavani"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="transition-transform duration-200 hover:scale-[1.2] inline-flex items-center justify-center"
+                >
+                  <IconInstagram className="w-7 h-7" />
+                </a>
+                <a
+                  href="https://leetcode.com/bramhagulavani"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LeetCode"
+                  className="transition-transform duration-200 hover:scale-[1.2] inline-flex items-center justify-center"
+                >
+                  <IconLeetcode className="w-7 h-7 text-[#FFA116]" />
+                </a>
               </div>
+
+              {/* LinkedIn Style Running Plain Text Bio */}
+              <p className="mt-4 text-xs font-medium text-slate-500 leading-relaxed text-center">
+                Third-Year CSE (AI & ML) Student @ VIT Pune | Class Representative | DSA in Java | Git & GitHub Certified | AI | Team Collaborator | Learning Data Analytics
+              </p>
             </div>
           </div>
         </section>
@@ -911,7 +1101,10 @@ function App() {
             {CERT_TABS.map((tab) => (
               <button
                 key={tab}
-                onClick={() => setCertTab(tab)}
+                onClick={() => {
+                  setCertTab(tab);
+                  setShowAll(false);
+                }}
                 className={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition duration-200 ${certTab === tab
                   ? 'bg-emerald-600 text-white shadow-sm'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
@@ -924,54 +1117,75 @@ function App() {
 
           {/* Certificate Grid */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {certificates
-              .filter((c) => certTab === 'All' || c.category === certTab)
-              .map((cert) => (
-                <article
-                  key={cert.id}
-                  onClick={() => setLightboxCert(cert)}
-                  className="light-card group cursor-pointer overflow-hidden flex flex-col justify-between"
-                >
-                  <div className="relative h-48 w-full overflow-hidden bg-slate-100">
-                    <img
-                      src={cert.image}
-                      alt={cert.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                    {/* Fallback container */}
-                    <div
-                      className="hidden absolute inset-0 flex-col items-center justify-center gap-2 bg-slate-100 p-4 text-slate-400"
-                      style={{ display: 'none' }}
-                    >
-                      <IconAward className="w-8 h-8 text-emerald-600" />
-                      <p className="text-center text-xs font-semibold text-slate-600">{cert.title}</p>
-                    </div>
+            {visibleCertificates.map((cert) => (
+              <article
+                key={cert.id}
+                onClick={() => setLightboxCert(cert)}
+                className="light-card group cursor-pointer overflow-hidden flex flex-col justify-between"
+              >
+                <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback container */}
+                  <div
+                    className="hidden absolute inset-0 flex-col items-center justify-center gap-2 bg-slate-100 p-4 text-slate-400"
+                    style={{ display: 'none' }}
+                  >
+                    <IconAward className="w-8 h-8 text-emerald-600" />
+                    <p className="text-center text-xs font-semibold text-slate-600">{cert.title}</p>
+                  </div>
 
-                    {/* Category Badge top-left */}
-                    <span className="absolute left-3 top-3 rounded-full bg-emerald-600 text-white px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-sm">
-                      {cert.category}
+                  {/* Category Badge top-left */}
+                  <span className="absolute left-3 top-3 rounded-full bg-emerald-600 text-white px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                    {cert.category}
+                  </span>
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-slate-900/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span className="rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-900 shadow-md">
+                      View Certificate
                     </span>
-
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-slate-900/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <span className="rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-900 shadow-md">
-                        View Certificate
-                      </span>
-                    </div>
                   </div>
+                </div>
 
-                  <div className="p-5">
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">{cert.title}</h3>
-                    <p className="mt-1 text-xs font-semibold text-emerald-700">{cert.issuer}</p>
-                    <p className="mt-0.5 text-xs text-slate-500">{cert.date}</p>
-                  </div>
-                </article>
-              ))}
+                <div className="p-5">
+                  <h3 className="text-base font-bold text-slate-900 leading-snug">{cert.title}</h3>
+                  <p className="mt-1 text-xs font-semibold text-emerald-700">{cert.issuer}</p>
+                  <p className="mt-0.5 text-xs text-slate-500">{cert.date}</p>
+                </div>
+              </article>
+            ))}
           </div>
+
+          {/* Show More / Show Less Toggle Button */}
+          {filteredCertificates.length > 6 && (
+            <div className="mt-10 flex justify-center">
+              <button
+                type="button"
+                onClick={() => {
+                  if (showAll) {
+                    setShowAll(false);
+                    const certHeader = document.getElementById('certificates');
+                    if (certHeader) {
+                      certHeader.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  } else {
+                    setShowAll(true);
+                  }
+                }}
+                className="rounded-xl border-2 border-emerald-600 bg-transparent px-6 py-2.5 text-xs font-bold text-emerald-600 transition hover:bg-emerald-600 hover:text-white"
+              >
+                {showAll ? 'Show Less' : 'Show More'}
+              </button>
+            </div>
+          )}
         </section>
 
         {/* Lightbox Modal */}
