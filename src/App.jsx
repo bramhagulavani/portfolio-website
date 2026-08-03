@@ -346,8 +346,32 @@ const certificates = [
   },
   {
     id: 'c15',
-    category: 'Coursera',
+    category: 'Badges',
     title: 'AI For Brainstorming and Planning',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/Badges/google-ai-for-brainstorming-and-planning.png',
+  },
+  {
+    id: 'c16',
+    category: 'Badges',
+    title: 'AI For Research and Insights',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/Badges/google-ai-for-research-and-insights.png',
+  },
+  {
+    id: 'c17',
+    category: 'Coursera',
+    title: 'AI For Research and Insights',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/AI-for-Research-and-Insights.png',
+  },
+  {
+    id: 'c18',
+    category: 'Coursera',
+    title: 'AI for Brainstorming and Planning',
     issuer: 'Google',
     date: '2025',
     image: '/certificates/AI_FOR_BRAINSTORMING.png',
@@ -571,11 +595,10 @@ function App() {
 
       {/* Light Glass Navbar */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          scrolled
-            ? 'border-b border-slate-200/80 bg-white/90 shadow-nav backdrop-blur-md'
-            : 'bg-white/60 backdrop-blur-sm'
-        }`}
+        className={`sticky top-0 z-40 transition-all duration-300 ${scrolled
+          ? 'border-b border-slate-200/80 bg-white/90 shadow-nav backdrop-blur-md'
+          : 'bg-white/60 backdrop-blur-sm'
+          }`}
       >
         <nav className="section-wrap flex h-16 items-center justify-between">
           <a href="#home" className="font-display text-xl font-bold tracking-tight flex items-center gap-2">
@@ -599,11 +622,10 @@ function App() {
               return (
                 <li key={item.href}>
                   <a
-                    className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-200 ${
-                      isActive
-                        ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/60 shadow-sm'
-                        : 'text-slate-600 hover:bg-slate-100/70 hover:text-slate-900'
-                    }`}
+                    className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-200 ${isActive
+                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/60 shadow-sm'
+                      : 'text-slate-600 hover:bg-slate-100/70 hover:text-slate-900'
+                      }`}
                     href={item.href}
                   >
                     {item.label}
@@ -620,11 +642,10 @@ function App() {
               {navLinks.map((item) => (
                 <li key={item.href}>
                   <a
-                    className={`block rounded-xl border px-3 py-2 text-xs font-medium transition ${
-                      activeSection === item.href.substring(1)
-                        ? 'border-emerald-300 bg-emerald-50 text-emerald-700 font-semibold'
-                        : 'border-slate-100 bg-slate-50/50 text-slate-700 hover:bg-slate-100'
-                    }`}
+                    className={`block rounded-xl border px-3 py-2 text-xs font-medium transition ${activeSection === item.href.substring(1)
+                      ? 'border-emerald-300 bg-emerald-50 text-emerald-700 font-semibold'
+                      : 'border-slate-100 bg-slate-50/50 text-slate-700 hover:bg-slate-100'
+                      }`}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
                   >
@@ -645,15 +666,15 @@ function App() {
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               AI & ML Focused Engineer
             </span>
-            
+
             <h1 className="font-display text-4xl font-bold leading-[1.15] text-slate-900 sm:text-5xl lg:text-6xl tracking-tight mt-2">
               Hi, I'm <span className="text-gradient-green">Bramha Vinayak</span> Gulavani
             </h1>
-            
+
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
               Building intelligent, practical systems through clean engineering and data-driven thinking. I enjoy solving real-world problems with modern web and AI tooling.
             </p>
-            
+
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
               <a className="btn-primary" href={assets.resumeFile} target="_blank" rel="noreferrer">
                 View Resume <IconExternalLink />
@@ -891,11 +912,10 @@ function App() {
               <button
                 key={tab}
                 onClick={() => setCertTab(tab)}
-                className={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition duration-200 ${
-                  certTab === tab
-                    ? 'bg-emerald-600 text-white shadow-sm'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
-                }`}
+                className={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition duration-200 ${certTab === tab
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                  }`}
               >
                 {tab}
               </button>
