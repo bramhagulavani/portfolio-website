@@ -403,6 +403,22 @@ const certificates = [
     date: '2025',
     image: '/certificates/AI_FOR_BRAINSTORMING.png',
   },
+  {
+    id: 'c19',
+    category: 'Coursera',
+    title: 'AI for Writing and Communicating',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/google-ai-for-writing-and-communicating.png',
+  },
+  {
+    id: 'c20',
+    category: 'Badges',
+    title: 'AI for Writing and Communicating',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/Badges/google-ai-for-writing-and-communicating.png',
+  },
 ];
 
 const CERT_TABS = ['All', 'Hackathon', 'Coursera', 'Event', 'Exhibition', 'Badges'];
@@ -543,15 +559,15 @@ function SkillItem({ skill }) {
   const hasIcon = Boolean(skill.icon);
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-xl border border-slate-200/90 bg-white px-3.5 py-2 text-xs font-medium text-slate-700 shadow-sm transition hover:border-emerald-500/50 hover:bg-emerald-50/30 hover:text-emerald-800 hover:shadow-sm">
+    <span className="inline-flex items-center gap-[6px] min-w-max whitespace-nowrap rounded-xl border border-slate-200/90 bg-white px-3.5 py-2 text-xs font-medium text-slate-700 shadow-sm transition shrink-0 hover:border-emerald-500/50 hover:bg-emerald-50/30 hover:text-emerald-800 hover:shadow-sm">
       {hasIcon ? (
-        <img src={skill.icon} alt={skill.name} className="h-4.5 w-4.5 object-contain" loading="lazy" />
+        <img src={skill.icon} alt={skill.name} className="w-[20px] h-[20px] shrink-0 object-contain" loading="lazy" />
       ) : (
-        <span className="inline-flex h-4.5 min-w-[18px] items-center justify-center rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-800">
+        <span className="inline-flex h-[20px] min-w-[20px] shrink-0 items-center justify-center rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-800 whitespace-nowrap">
           {skill.symbol}
         </span>
       )}
-      <span>{skill.name}</span>
+      <span className="whitespace-nowrap">{skill.name}</span>
     </span>
   );
 }
@@ -589,6 +605,30 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // IntersectionObserver for scroll-triggered float-up animation on Skills & Projects cards
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          } else {
+            entry.target.classList.remove('is-visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const targets = document.querySelectorAll('.skill-card, .project-card');
+    targets.forEach((el) => observer.observe(el));
+
+    return () => {
+      targets.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
   }, []);
 
   const year = useMemo(() => new Date().getFullYear(), []);
@@ -699,6 +739,30 @@ function App() {
           border-color: #10b981;
           color: #10b981;
           transform: scale(1.02);
+        }
+
+        @keyframes floatUp {
+          from {
+            opacity: 0;
+            transform: translateY(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .skill-card,
+        .project-card {
+          opacity: 0;
+          transform: translateY(60px);
+          transition: none;
+        }
+
+        .skill-card.is-visible,
+        .project-card.is-visible {
+          animation: floatUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          animation-delay: var(--card-delay, 0s);
         }
       `}</style>
 
@@ -823,7 +887,7 @@ function App() {
                 <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="fake-cursor-dot">
                   <path d="M4 2L4 26L10 20L14 30L17 29L13 19L22 19L4 2Z"
                     fill="white" stroke="black" strokeWidth="2"
-                    strokeLinejoin="round" strokeLinecap="round"/>
+                    strokeLinejoin="round" strokeLinecap="round" />
                 </svg>
               </a>
               <a className="hero-btn-secondary" href="https://project-page-three.vercel.app/" target="_blank" rel="noreferrer">
@@ -1036,9 +1100,9 @@ function App() {
             <div className="marquee-container">
               <div className="marquee-content animate-marquee">
                 {marqueeSkills.concat(marqueeSkills).map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-2 shadow-sm">
-                    <img src={item.icon} alt={item.name} className="h-5 w-5 object-contain" />
-                    <span className="text-xs font-bold text-slate-800">{item.name}</span>
+                  <div key={idx} className="flex shrink-0 items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-2 shadow-sm min-w-max whitespace-nowrap">
+                    <img src={item.icon} alt={item.name} className="h-5 w-5 shrink-0 object-contain" />
+                    <span className="text-xs font-bold text-slate-800 whitespace-nowrap">{item.name}</span>
                   </div>
                 ))}
               </div>
@@ -1046,12 +1110,16 @@ function App() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            {skills.map((block) => (
-              <article key={block.title} className="light-card p-6">
+            {skills.map((block, idx) => (
+              <article
+                key={block.title}
+                className="light-card p-6 skill-card overflow-visible"
+                style={{ '--card-delay': `${idx * 0.1}s` }}
+              >
                 <h3 className="font-display text-lg font-bold text-slate-900 flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" /> {block.title}
                 </h3>
-                <div className="mt-5 flex flex-wrap gap-2.5">
+                <div className="mt-5 flex flex-wrap gap-[8px] items-center overflow-visible">
                   {block.items.map((skill) => (
                     <SkillItem key={skill.name} skill={skill} />
                   ))}
@@ -1070,8 +1138,12 @@ function App() {
           />
 
           <div className="grid gap-6 lg:grid-cols-2">
-            {projects.map((project) => (
-              <article key={project.name} className="light-card p-6 flex flex-col justify-between">
+            {projects.map((project, idx) => (
+              <article
+                key={project.name}
+                className="light-card p-6 flex flex-col justify-between project-card"
+                style={{ '--card-delay': `${idx * 0.1}s` }}
+              >
                 <div>
                   <h3 className="font-display text-xl font-bold text-slate-900">{project.name}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">{project.desc}</p>
