@@ -419,6 +419,38 @@ const certificates = [
     date: '2025',
     image: '/certificates/Badges/google-ai-for-writing-and-communicating.png',
   },
+  {
+    id: 'c21',
+    category: 'Coursera',
+    title: 'AI for Content Creation',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/AI-for-Content-Creation.png',
+  },
+  {
+    id: 'c22',
+    category: 'Coursera',
+    title: 'AI for Data Analysis',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/AI-for-Data-Analysis.png',
+  },
+  {
+    id: 'c23',
+    category: 'Badges',
+    title: 'AI for Data Analysis',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/Badges/google-ai-for-data-analysis.png',
+  },
+  {
+    id: 'c24',
+    category: 'Badges',
+    title: 'AI for Content Creation',
+    issuer: 'Google',
+    date: '2025',
+    image: '/certificates/Badges/google-ai-for-content-creation.png',
+  },
 ];
 
 const CERT_TABS = ['All', 'Hackathon', 'Coursera', 'Event', 'Exhibition', 'Badges'];
