@@ -360,7 +360,7 @@ const certificates = [
     category: 'Coursera',
     title: 'AI Fundamentals',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/AI_Fundamentals.png',
   },
   {
@@ -368,7 +368,7 @@ const certificates = [
     category: 'Badges',
     title: 'AI Fundamentals Badge',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/Badges/google-ai-fundamentals.png',
   },
   {
@@ -376,7 +376,7 @@ const certificates = [
     category: 'Badges',
     title: 'AI For Brainstorming and Planning',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/Badges/google-ai-for-brainstorming-and-planning.png',
   },
   {
@@ -384,7 +384,7 @@ const certificates = [
     category: 'Badges',
     title: 'AI For Research and Insights',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/Badges/google-ai-for-research-and-insights.png',
   },
   {
@@ -392,7 +392,7 @@ const certificates = [
     category: 'Coursera',
     title: 'AI For Research and Insights',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/AI-for-Research-and-Insights.png',
   },
   {
@@ -400,7 +400,7 @@ const certificates = [
     category: 'Coursera',
     title: 'AI for Brainstorming and Planning',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/AI_FOR_BRAINSTORMING.png',
   },
   {
@@ -408,7 +408,7 @@ const certificates = [
     category: 'Coursera',
     title: 'AI for Writing and Communicating',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/google-ai-for-writing-and-communicating.png',
   },
   {
@@ -416,7 +416,7 @@ const certificates = [
     category: 'Badges',
     title: 'AI for Writing and Communicating',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/Badges/google-ai-for-writing-and-communicating.png',
   },
   {
@@ -424,7 +424,7 @@ const certificates = [
     category: 'Coursera',
     title: 'AI for Content Creation',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/AI-for-Content-Creation.png',
   },
   {
@@ -432,7 +432,7 @@ const certificates = [
     category: 'Coursera',
     title: 'AI for Data Analysis',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/AI-for-Data-Analysis.png',
   },
   {
@@ -440,7 +440,7 @@ const certificates = [
     category: 'Badges',
     title: 'AI for Data Analysis',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/Badges/google-ai-for-data-analysis.png',
   },
   {
@@ -448,8 +448,40 @@ const certificates = [
     category: 'Badges',
     title: 'AI for Content Creation',
     issuer: 'Google',
-    date: '2025',
+    date: '2026',
     image: '/certificates/Badges/google-ai-for-content-creation.png',
+  },
+  {
+    id: 'c25',
+    category: 'Coursera',
+    title: 'Google AI',
+    issuer: 'Google',
+    date: '2026',
+    image: '/certificates/Google-AI.png',
+  },
+  {
+    id: 'c26',
+    category: 'Badges',
+    title: 'Google AI',
+    issuer: 'Google',
+    date: '2026',
+    image: '/certificates/Badges/google-ai-for-app-building.png',
+  },
+  {
+    id: 'c27',
+    category: 'Event',
+    title: 'IQOO Connect- official community',
+    issuer: 'IQOO',
+    date: '2026',
+    image: '/certificates/certificateofIQOO.jpeg',
+  },
+  {
+    id: 'c28',
+    category: 'Event',
+    title: 'Cyber Apocalypse CTF 2026',
+    issuer: 'HackTheBox',
+    date: '2026',
+    image: '/certificates/Hackthebox.png',
   },
 ];
 
@@ -476,9 +508,9 @@ const galleryCards = [
     image: '/gallery/VIT-2.jpg',
   },
   {
-    title: 'Operating Systems Presentation',
-    tag: 'Academics',
-    image: '/gallery/OSPresentation.jpeg',
+    title: 'iQOO Z11 Sneak Peek Session',
+    tag: 'Event',
+    image: '/gallery/DoubtSessionatIQOO.jpeg',
   },
   {
     title: 'Springboard Session',
