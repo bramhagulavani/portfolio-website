@@ -513,9 +513,9 @@ const galleryCards = [
     image: '/gallery/DoubtSessionatIQOO.jpeg',
   },
   {
-    title: 'Springboard Session',
+    title: 'Northeastern University Global Study Expo 2026',
     tag: 'Workshop',
-    image: '/gallery/Springboardimage3.jpeg',
+    image: '/gallery/NortheasternUniversityEvent.jpeg',
   },
   {
     title: 'EDI Presentation',
